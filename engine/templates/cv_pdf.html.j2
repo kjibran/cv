@@ -1,0 +1,159 @@
+{% import "macros.html.j2" as m with context %}
+<!doctype html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="utf-8">
+<title>{{ person.name }}, curriculum vitae</title>
+<meta name="author" content="{{ person.name }}">
+<meta name="description" content="Curriculum vitae of {{ person.name }}">
+<style>
+@font-face { font-family: "CV Serif"; font-weight: 400; font-style: normal; src: url("{{ fonts_url }}source-serif-4-latin-400-normal.woff2"); }
+@font-face { font-family: "CV Serif"; font-weight: 400; font-style: italic; src: url("{{ fonts_url }}source-serif-4-latin-400-italic.woff2"); }
+@font-face { font-family: "CV Serif"; font-weight: 600; font-style: normal; src: url("{{ fonts_url }}source-serif-4-latin-600-normal.woff2"); }
+@font-face { font-family: "CV Serif"; font-weight: 600; font-style: italic; src: url("{{ fonts_url }}source-serif-4-latin-600-italic.woff2"); }
+@page {
+  size: A4; margin: 18mm 18mm 20mm;
+  @bottom-left { content: "{{ person.name }}, curriculum vitae, {{ updated }}"; font: 7.5pt "CV Serif"; color: #777; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt "CV Serif"; color: #777; }
+}
+html { font: 9.6pt/1.42 "CV Serif", Georgia, serif; color: #1b1b1b; }
+body { margin: 0; }
+a { color: #1f4e79; text-decoration: none; }
+strong { font-weight: 600; }
+sub { font-size: 0.72em; line-height: 0; }
+h1 { font-size: 21pt; font-weight: 600; margin: 0 0 1mm; }
+.tagline { color: #444; font-size: 10.5pt; margin: 0 0 2mm; }
+.contact { color: #444; font-size: 8.8pt; margin: 0 0 1mm; }
+.contact span + span::before { content: "·"; color: #999; margin: 0 1.6mm; }
+h2 {
+  font-size: 11.5pt; font-weight: 600; margin: 6mm 0 2.5mm; padding-bottom: 1mm;
+  border-bottom: 0.5pt solid #bbb; color: #1f4e79; break-after: avoid;
+}
+h3 { font-size: 9.8pt; font-weight: 600; margin: 3.5mm 0 1.5mm; color: #555; break-after: avoid; }
+p { margin: 0 0 2mm; }
+.entry { display: flex; margin: 0 0 2.2mm; break-inside: avoid; }
+.entry > .when { flex: 0 0 25mm; color: #555; }
+.entry .what { flex: 1; }
+.entry .title { font-weight: 600; }
+.entry .where { color: #555; }
+.entry ul { margin: 0.8mm 0 0; padding-left: 4mm; }
+.entry li { margin: 0.4mm 0; }
+ul.plain { margin: 0; padding-left: 4mm; }
+ul.plain li { margin: 0.6mm 0; }
+.pubs { counter-reset: n; }
+.pubrow { display: flex; margin: 0 0 1.8mm; break-inside: avoid; }
+.pubrow .num { flex: 0 0 9mm; color: #777; }
+.pubrow .body { flex: 1; }
+.pubrow .yr { color: #555; }
+.venue { font-style: italic; }
+.note, .plinks { color: #555; font-size: 8.6pt; }
+.plinks a + a::before { content: "·"; color: #999; margin: 0 1.4mm; }
+.muted { color: #555; }
+</style>
+</head>
+<body>
+<h1>{{ person.name }}</h1>
+{% if person.title %}<p class="tagline">{{ person.title | rich }}</p>{% endif %}
+<p class="contact">
+  {% if person.location %}<span>{{ person.location }}</span>{% endif %}
+  {% if person.email %}<span><a href="mailto:{{ person.email }}">{{ person.email }}</a></span>{% endif %}
+  <span><a href="{{ site.url }}">{{ site.url | replace('https://', '') | trim('/') }}</a></span>
+</p>
+<p class="contact">
+  {% for link in links if link.url.startswith('http') %}<span><a href="{{ link.url }}">{{ link.label.split(':')[0] }}</a></span>{% endfor %}
+</p>
+
+<h2>Profile</h2>
+<p>{{ person.bio | rich }}</p>
+{% if p.metrics is defined and p.metrics %}
+<p class="muted">{% for x in p.metrics['items'] %}{{ x.label }}: {{ x.value }}{% if not loop.last %}. {% endif %}{% endfor %}. As of {{ p.metrics.as_of }}.</p>
+{% endif %}
+
+{% if p.research_focus is defined and p.research_focus %}
+<h2>Research focus</h2>
+<ul class="plain">{% for item in p.research_focus %}<li>{{ item | rich }}</li>{% endfor %}</ul>
+{% endif %}
+
+{% if p.positions is defined and p.positions %}
+<h2>Experience</h2>
+{% for x in p.positions %}{{ m.entry(x.period, x.role, x.place, points=x.points or []) }}{% endfor %}
+{% endif %}
+
+{% if p.education is defined and p.education %}
+<h2>Education</h2>
+{% for x in p.education %}{{ m.entry(x.period, x.degree, x.place, x.detail) }}{% endfor %}
+{% endif %}
+
+{% if p.grants is defined and p.grants %}
+<h2>Grants</h2>
+{% if p.grants.main %}<h3>Main applicant or principal investigator</h3>
+{% for g in p.grants.main %}{{ m.entry(g.period, g.name, g.funder, [g.role, g.amount] | select | join('. ') ~ '.') }}{% endfor %}{% endif %}
+{% if p.grants.co %}<h3>Co-applicant and work package lead</h3>
+{% for g in p.grants.co %}{{ m.entry(g.period, g.name, g.funder, [g.role, g.amount] | select | join('. ') ~ '.') }}{% endfor %}{% endif %}
+{% endif %}
+
+{% if pubs %}
+<h2>Publications</h2>
+<p class="muted">{{ pubs | length }} publications: {% for t, items in by_type.items() %}{{ items | length }} {{ types[t] | lower }}{% if not loop.last %}, {% endif %}{% endfor %}. Full list with links: <a href="{{ site.url }}publications/">{{ (site.url ~ 'publications/') | replace('https://', '') }}</a></p>
+{% for t, items in by_type.items() %}
+<h3>{{ types[t] }}</h3>
+{% for x in items %}
+<div class="pubrow">
+  <div class="num">{{ loop.revindex }}.</div>
+  <div class="body">
+    {{ x.authors | authors }} <span class="yr">({{ x.year }})</span>. {{ x.title | rich }}.{% if x.venue %} <span class="venue">{{ x.venue | rich }}</span>.{% endif %}
+    {% if x.note %}{{ ' ' }}<span class="note">{{ x.note | rich }}.</span>{% endif %}
+    {% if x.links %}{{ ' ' }}<span class="plinks">{% for l in x.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</span>{% endif %}
+  </div>
+</div>
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+{% if p.talks is defined and p.talks %}
+<h2>Talks</h2>
+{% for t in p.talks.highlight or [] %}{{ m.entry(t.year, t.title, t.event, t.authors) }}{% endfor %}
+{% if p.talks.oral %}<h3>Selected oral presentations</h3>{% for t in p.talks.oral %}{{ m.entry(t.year, t.title, t.event) }}{% endfor %}{% endif %}
+{% if p.talks.poster %}<h3>Posters</h3>{% for t in p.talks.poster %}{{ m.entry(t.year, t.title, t.event) }}{% endfor %}{% endif %}
+{% endif %}
+
+{% if p.teaching is defined and p.teaching %}
+<h2>Teaching</h2>
+{% for x in p.teaching %}{{ m.entry(x.period, x.role, x.place, x.detail) }}{% endfor %}
+{% endif %}
+
+{% if p.supervision is defined and p.supervision %}
+<h2>Supervision</h2>
+{% for x in p.supervision %}{{ m.entry(x.period, x.role, x.who, x.topic) }}{% endfor %}
+{% endif %}
+
+{% if p.advisory is defined and p.advisory %}
+<h2>Advisory and commissioned work</h2>
+<ul class="plain">{% for x in p.advisory %}<li><strong>{{ x.name | rich }}.</strong> {{ x.detail | rich }}</li>{% endfor %}</ul>
+{% endif %}
+
+{% if p.service is defined and p.service %}
+<h2>Service</h2>
+{% for g in p.service %}<h3>{{ g.group }}</h3>
+<ul class="plain">{% for item in g['items'] %}<li>{{ item | rich }}</li>{% endfor %}</ul>{% endfor %}
+{% endif %}
+
+{% if p.visits is defined and p.visits %}
+<h2>Research visits</h2>
+{% for x in p.visits %}{{ m.entry(x.period, x.place, '', x.detail) }}{% endfor %}
+{% endif %}
+
+{% if p.awards is defined and p.awards %}
+<h2>Awards</h2>
+{% for x in p.awards %}{{ m.entry(x.year, x.name, '', x.detail) }}{% endfor %}
+{% endif %}
+
+{% if (p.skills is defined and p.skills) or (p.languages is defined and p.languages) %}
+<h2>Skills and languages</h2>
+<ul class="plain">
+{% for s in p.skills or [] %}<li><strong>{{ s.group }}.</strong> {{ s['items'] }}</li>{% endfor %}
+{% if p.languages %}<li><strong>Languages.</strong> {{ p.languages }}</li>{% endif %}
+</ul>
+{% endif %}
+</body>
+</html>

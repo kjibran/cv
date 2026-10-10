@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="{{ site.language | default('en') }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %}</title>
+<meta name="description" content="{% block description %}{% endblock %}">
+<meta name="author" content="{{ person.name }}">
+<link rel="canonical" href="{{ site.url }}{% block path %}{% endblock %}">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:url" content="{{ site.url }}{{ self.path() }}">
+{% if photo %}
+<meta property="og:image" content="{{ site.url }}{{ photo.jpg }}">
+<meta name="twitter:card" content="summary">
+{% endif %}
+{% if site.google_verification is defined and site.google_verification %}
+<meta name="google-site-verification" content="{{ site.google_verification }}">
+{% endif %}
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ root }}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ root }}apple-touch-icon.png">
+<link rel="preload" href="{{ root }}fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // Set the colour theme before the page paints, so there is no flash.
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<style>
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 400; font-display: swap; src: url("{{ root }}fonts/source-serif-4-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400; font-display: swap; src: url("{{ root }}fonts/source-serif-4-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 600; font-display: swap; src: url("{{ root }}fonts/source-serif-4-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 600; font-display: swap; src: url("{{ root }}fonts/source-serif-4-latin-600-italic.woff2") format("woff2"); }
+
+:root {
+  --bg: #fcfcfa; --text: #1e1e1e; --muted: #5e6166; --faint: #8a8d91;
+  --line: #e2e2dd; --accent: #1f4e79; --accent-soft: #e9eef4;
+  --s-journal: #1f4e79; --s-proceedings: #6f93b8; --s-chapter: #b7c7d8; --s-report: #a3a3a0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151617; --text: #e5e4e0; --muted: #a3a6aa; --faint: #7c7f83;
+    --line: #2e3033; --accent: #8fb6e0; --accent-soft: #1f2833;
+    --s-journal: #8fb6e0; --s-proceedings: #5b7ea3; --s-chapter: #3d566f; --s-report: #6b6c6e;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151617; --text: #e5e4e0; --muted: #a3a6aa; --faint: #7c7f83;
+  --line: #2e3033; --accent: #8fb6e0; --accent-soft: #1f2833;
+  --s-journal: #8fb6e0; --s-proceedings: #5b7ea3; --s-chapter: #3d566f; --s-report: #6b6c6e;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 400 1.0625rem/1.6 "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto; text-rendering: optimizeLegibility;
+}
+main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 3rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+strong { font-weight: 600; }
+sub { font-size: 0.72em; line-height: 0; }
+h1, h2, h3 { font-weight: 600; line-height: 1.25; }
+h2 {
+  font-size: 1.3rem; margin: 3rem 0 1rem; padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line); scroll-margin-top: 1rem;
+}
+h3 { font-size: 1.05rem; margin: 1.75rem 0 0.6rem; color: var(--muted); }
+p { margin: 0 0 0.8rem; }
+.muted { color: var(--muted); }
+.small { font-size: 0.92rem; }
+
+.theme-toggle {
+  position: absolute; top: 0.9rem; right: 0.9rem; width: 2.4rem; height: 2.4rem;
+  display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%;
+  background: transparent; color: var(--muted); cursor: pointer; padding: 0;
+}
+.theme-toggle:hover { color: var(--text); }
+.theme-toggle .icon { width: 1.2rem; height: 1.2rem; }
+.theme-toggle .sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
+}
+
+/* Rows with the date in the margin */
+.entry { display: grid; grid-template-columns: 7.5rem 1fr; column-gap: 1.25rem; margin: 0 0 1.1rem; }
+.entry > .when { color: var(--muted); font-size: 0.95rem; font-variant-numeric: tabular-nums; padding-top: 0.05rem; }
+.entry .what { min-width: 0; }
+.entry .title { font-weight: 600; }
+.entry .where { color: var(--muted); }
+.entry ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+.entry li { margin: 0.2rem 0; }
+.entry li::marker { color: var(--faint); }
+@media (max-width: 36rem) {
+  .entry { grid-template-columns: 1fr; }
+  .entry > .when { font-size: 0.9rem; padding: 0; }
+}
+ul.plain { margin: 0; padding-left: 1.1rem; }
+ul.plain li { margin: 0.3rem 0; }
+ul.plain li::marker { color: var(--faint); }
+
+/* Publications */
+.pub { margin: 0 0 1rem; }
+.pub .ptitle { font-weight: 600; }
+.pub .authors, .pub .venue { color: var(--muted); }
+.pub .venue { font-style: italic; }
+.pub .note { font-size: 0.9rem; color: var(--muted); }
+.pub .plinks { font-size: 0.9rem; }
+.pub .plinks a + a::before { content: "·"; color: var(--faint); margin: 0 0.45rem; display: inline-block; }
+.year-group { display: grid; grid-template-columns: 3.5rem 1fr; column-gap: 1rem; }
+.year-group > .year { color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 0.05rem; }
+@media (max-width: 36rem) { .year-group { grid-template-columns: 1fr; } .year-group > .year { font-weight: 600; margin-bottom: 0.4rem; } }
+
+/* Chart */
+figure.chart-box { margin: 0.5rem 0 1.5rem; }
+svg.chart { width: 100%; height: auto; display: block; }
+svg.chart .grid { stroke: var(--line); stroke-width: 1; }
+svg.chart .tick { fill: var(--muted); font: 14px "Source Serif 4", Georgia, serif; }
+svg.chart rect { stroke: var(--bg); stroke-width: 0.75; }
+.s-journal { fill: var(--s-journal); background: var(--s-journal); }
+.s-proceedings { fill: var(--s-proceedings); background: var(--s-proceedings); }
+.s-chapter { fill: var(--s-chapter); background: var(--s-chapter); }
+.s-report { fill: var(--s-report); background: var(--s-report); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.88rem; color: var(--muted); margin-top: 0.4rem; }
+.legend .key { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend .swatch { width: 0.75rem; height: 0.75rem; border-radius: 2px; display: inline-block; }
+figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.3rem; }
+
+footer { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1rem 2.5rem; border-top: 1px solid var(--line); color: var(--faint); font-size: 0.85rem; }
+footer a { color: var(--muted); }
+{% block style %}{% endblock %}
+</style>
+<script type="application/ld+json">{{ jsonld }}</script>
+</head>
+<body>
+<button class="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Light or dark mode">
+  {{ icon('moon', 'icon moon') }}{{ icon('sun', 'icon sun') }}
+</button>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer>
+  Last updated {{ updated }}. {% block footer_extra %}{% endblock %}
+</footer>
+<script>
+  (function () {
+    var root = document.documentElement;
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      var current = root.getAttribute("data-theme") ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+    // Email links are stored encoded so spam bots cannot read them from the page source.
+    document.querySelectorAll("a[data-e]").forEach(function (a) {
+      var addr = atob(a.getAttribute("data-e")).split("").reverse().join("");
+      a.href = "mailto:" + addr;
+      if (a.hasAttribute("data-show")) a.textContent = addr;
+    });
+  })();
+</script>
+{% if site.goatcounter %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+name: Check links
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install the system libraries the PDF needs
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libpango-1.0-0 libpangoft2-1.0-0
+      - uses: astral-sh/setup-uv@v6
+      - name: Build the website and the PDF
+        run: uv run python build.py
+      - name: Check every link on both pages
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --no-progress
+            --max-retries 3
+            --timeout 30
+            --accept "200..=299,401,403,429,999"
+            --exclude "goatcounter.com"
+            --exclude "gc.zgo.at"
+            --root-dir "${{ github.workspace }}/site"
+            site/index.html site/publications/index.html

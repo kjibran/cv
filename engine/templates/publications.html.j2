@@ -1,0 +1,38 @@
+{% extends "base.html.j2" %}
+{% import "macros.html.j2" as m with context %}
+{% block title %}Publications | {{ person.name }}{% endblock %}
+{% block description %}All {{ pubs | length }} publications by {{ person.name }}, {{ year_span[0] }}–{{ year_span[1] }}: {% for t, items in by_type.items() %}{{ items | length }} {{ types[t] | lower }}{% if not loop.last %}, {% endif %}{% endfor %}.{% endblock %}
+{% block path %}publications/{% endblock %}
+{% block style %}
+.back { font-size: 0.95rem; margin: 0 0 1.5rem; display: inline-block; }
+h1 { font-size: 1.9rem; margin: 0 0 0.4rem; }
+.lead { color: var(--muted); margin-bottom: 1.25rem; }
+.jump { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; font-size: 0.95rem; margin: 0 0 0.5rem; }
+.count { color: var(--faint); font-weight: 400; font-size: 0.95rem; }
+{% endblock %}
+{% block content %}
+<a class="back" href="../">← {{ person.name }}</a>
+<h1>Publications</h1>
+<p class="lead">{{ pubs | length }} publications, {{ year_span[0] }}–{{ year_span[1] }}.
+{% if p.metrics is defined and p.metrics %}{% for x in p.metrics['items'] %}{{ x.label }}: {{ x.value }}{% if not loop.last %}. {% endif %}{% endfor %}. As of {{ p.metrics.as_of }}.{% endif %}
+{% if person.highlight_name %}{{ ' ' }}My name is in bold.{% endif %}</p>
+<figure class="chart-box">
+  {{ chart }}
+  <figcaption>Publications per year by type.</figcaption>
+</figure>
+<nav class="jump" aria-label="Publication types">
+  {% for t, items in by_type.items() %}<a href="#{{ t }}">{{ types[t] }} ({{ items | length }})</a>{% endfor %}
+  <a href="../{{ site.pdf_name }}">CV (PDF)</a>
+</nav>
+
+{% for t, years in grouped.items() %}
+<h2 id="{{ t }}">{{ types[t] }} <span class="count">{{ by_type[t] | length }}</span></h2>
+{% for year, items in years %}
+<div class="year-group">
+  <div class="year">{{ year }}</div>
+  <div>{% for x in items %}{{ m.pub(x) }}{% endfor %}</div>
+</div>
+{% endfor %}
+{% endfor %}
+{% endblock %}
+{% block footer_extra %}<a href="../">Back to the CV</a>.{% endblock %}

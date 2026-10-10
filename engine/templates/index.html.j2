@@ -1,0 +1,159 @@
+{% extends "base.html.j2" %}
+{% import "macros.html.j2" as m with context %}
+{% block title %}{{ site.title or person.name }}{% endblock %}
+{% block description %}{{ person.bio | truncate(158, true, '…') }}{% endblock %}
+{% block path %}{% endblock %}
+{% block style %}
+.top { text-align: center; padding-top: 0.5rem; }
+.top img { width: 9.5rem; height: 9.5rem; border-radius: 0.9rem; display: block; margin: 0 auto 1.2rem; background: var(--line); }
+.top h1 { font-size: 2.1rem; margin: 0 0 0.35rem; letter-spacing: -0.01em; }
+.top .tagline { color: var(--muted); font-size: 1.08rem; margin: 0 auto 1rem; max-width: 34rem; }
+.top .bio { max-width: 38rem; margin: 0 auto 1.25rem; }
+.top .place { color: var(--faint); font-size: 0.95rem; margin: -0.6rem 0 1.1rem; }
+.icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 0.9rem; margin: 0 0 1.4rem; }
+.icons a { color: var(--muted); display: inline-flex; padding: 0.2rem; }
+.icons a:hover { color: var(--accent); }
+.icons .icon { width: 1.45rem; height: 1.45rem; }
+@media (max-width: 30rem) { .icons { max-width: 16rem; margin-left: auto; margin-right: auto; gap: 0.5rem 0.75rem; } }
+.buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0 0 1rem; }
+.buttons a {
+  border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.95rem;
+  color: var(--text); font-size: 0.95rem; background: transparent;
+}
+.buttons a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.buttons a.primary { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.metrics { font-size: 0.92rem; color: var(--muted); margin: 0 0 1.2rem; }
+.more { margin-top: 1.25rem; }
+.talk-authors { color: var(--muted); font-size: 0.95rem; }
+{% endblock %}
+{% block content %}
+<header class="top">
+  {% if photo %}
+  <img src="{{ photo.small }}" srcset="{{ photo.small }} 1x, {{ photo.large }} 2x" width="152" height="152" alt="Portrait of {{ person.name }}" fetchpriority="high">
+  {% endif %}
+  <h1>{{ person.name }}</h1>
+  {% if person.title %}<p class="tagline">{{ person.title | rich }}</p>{% endif %}
+  {% if person.location %}<p class="place">{{ person.location }}</p>{% endif %}
+  <p class="bio">{{ person.bio | rich }}</p>
+  <nav class="icons" aria-label="Profiles and contact">
+    {% for link in links %}{{ m.icon_link(link, root) }}{% endfor %}
+  </nav>
+  <nav class="buttons" aria-label="Sections">
+    <a class="primary" href="publications/">Publications</a>
+    {% if p.positions is defined and p.positions %}<a href="#experience">Experience</a>{% endif %}
+    {% if p.grants is defined and p.grants %}<a href="#grants">Grants</a>{% endif %}
+    {% if p.talks is defined and p.talks %}<a href="#talks">Talks</a>{% endif %}
+    {% if p.teaching is defined and p.teaching %}<a href="#teaching">Teaching</a>{% endif %}
+    {% if p.service is defined and p.service %}<a href="#service">Service</a>{% endif %}
+  </nav>
+</header>
+
+{% if p.research_focus is defined and p.research_focus %}
+<h2 id="research">Research focus</h2>
+<ul class="plain">{% for item in p.research_focus %}<li>{{ item | rich }}</li>{% endfor %}</ul>
+{% endif %}
+
+{% if p.positions is defined and p.positions %}
+<h2 id="experience">Experience</h2>
+{% for x in p.positions %}{{ m.entry(x.period, x.role, x.place, points=x.points or []) }}{% endfor %}
+{% endif %}
+
+{% if p.education is defined and p.education %}
+<h2 id="education">Education</h2>
+{% for x in p.education %}{{ m.entry(x.period, x.degree, x.place, x.detail) }}{% endfor %}
+{% endif %}
+
+{% if selected %}
+<h2 id="publications">{{ selected_text.heading }}</h2>
+{% if p.metrics is defined and p.metrics %}
+<p class="metrics">{% for x in p.metrics['items'] %}{{ x.label }}: {{ x.value }}{% if not loop.last %}. {% endif %}{% endfor %}. As of {{ p.metrics.as_of }}.</p>
+{% endif %}
+<figure class="chart-box">
+  {{ chart }}
+  <figcaption>Publications per year, {{ year_span[0] }}–{{ year_span[1] }}.</figcaption>
+</figure>
+{% if selected_text.intro %}<p class="muted">{{ selected_text.intro }}</p>{% endif %}
+{% for x in selected %}{{ m.pub(x) }}{% endfor %}
+<p class="more">{{ selected_text.more }} <a href="publications/">See all publications</a>.</p>
+{% endif %}
+
+{% if p.grants is defined and p.grants %}
+<h2 id="grants">Grants</h2>
+{% if p.grants.main %}
+<h3>Main applicant or principal investigator</h3>
+{% for g in p.grants.main %}{{ m.entry(g.period, g.name, g.funder, [g.role, g.amount] | select | join('. ') ~ '.', url=g.url) }}{% endfor %}
+{% endif %}
+{% if p.grants.co %}
+<h3>Co-applicant and work package lead</h3>
+{% for g in p.grants.co %}{{ m.entry(g.period, g.name, g.funder, [g.role, g.amount] | select | join('. ') ~ '.', url=g.url) }}{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if p.talks is defined and p.talks %}
+<h2 id="talks">Talks</h2>
+{% if p.talks.highlight %}
+<h3>Featured</h3>
+{% for t in p.talks.highlight %}
+<div class="entry">
+  <div class="when">{{ t.year }}</div>
+  <div class="what">
+    <div class="title">{{ t.title | rich }}</div>
+    <div class="where">{{ t.event }}</div>
+    {% if t.authors %}<div class="talk-authors">{{ t.authors | authors }}</div>{% endif %}
+    {% if t.url %}<div class="small"><a href="{{ t.url }}">Slides and abstract</a></div>{% endif %}
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% if p.talks.oral %}
+<h3>Selected oral presentations</h3>
+{% for t in p.talks.oral %}{{ m.entry(t.year, t.title, t.event) }}{% endfor %}
+{% endif %}
+{% if p.talks.poster %}
+<h3>Posters</h3>
+{% for t in p.talks.poster %}{{ m.entry(t.year, t.title, t.event) }}{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if p.teaching is defined and p.teaching %}
+<h2 id="teaching">Teaching</h2>
+{% for x in p.teaching %}{{ m.entry(x.period, x.role, x.place, x.detail) }}{% endfor %}
+{% endif %}
+
+{% if p.supervision is defined and p.supervision %}
+<h2 id="supervision">Supervision</h2>
+{% for x in p.supervision %}{{ m.entry(x.period, x.role, x.who, x.topic) }}{% endfor %}
+{% endif %}
+
+{% if p.advisory is defined and p.advisory %}
+<h2 id="advisory">Advisory and commissioned work</h2>
+<ul class="plain">{% for x in p.advisory %}<li><strong>{{ x.name | rich }}.</strong> <span class="muted">{{ x.detail | rich }}</span></li>{% endfor %}</ul>
+{% endif %}
+
+{% if p.service is defined and p.service %}
+<h2 id="service">Service</h2>
+{% for g in p.service %}
+<h3>{{ g.group }}</h3>
+<ul class="plain">{% for item in g['items'] %}<li>{{ item | rich }}</li>{% endfor %}</ul>
+{% endfor %}
+{% endif %}
+
+{% if p.visits is defined and p.visits %}
+<h2 id="visits">Research visits</h2>
+{% for x in p.visits %}{{ m.entry(x.period, x.place, '', x.detail) }}{% endfor %}
+{% endif %}
+
+{% if p.awards is defined and p.awards %}
+<h2 id="awards">Awards</h2>
+{% for x in p.awards %}{{ m.entry(x.year, x.name, '', x.detail) }}{% endfor %}
+{% endif %}
+
+{% if (p.skills is defined and p.skills) or (p.languages is defined and p.languages) %}
+<h2 id="skills">Skills and languages</h2>
+<ul class="plain">
+{% for s in p.skills or [] %}<li><strong>{{ s.group }}.</strong> {{ s['items'] }}</li>{% endfor %}
+{% if p.languages %}<li><strong>Languages.</strong> {{ p.languages }}</li>{% endif %}
+</ul>
+{% endif %}
+{% endblock %}
+{% block footer_extra %}<a href="{{ site.pdf_name }}">CV as PDF</a>. {% if site.source_repo %}Built with <a href="{{ site.source_repo }}">an open template</a>.{% endif %}{% endblock %}

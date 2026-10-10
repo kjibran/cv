@@ -1,0 +1,33 @@
+{% macro icon_link(link, root) %}
+{% if link.url == "PDF" %}
+<a href="{{ root }}{{ site.pdf_name }}" aria-label="{{ link.label }}" title="{{ link.label }}" data-goatcounter-click="cv-pdf">{{ icon(link.icon) }}</a>
+{% elif link.url == "EMAIL" %}
+<a href="#" data-e="{{ email_code }}" aria-label="{{ link.label }}" title="{{ link.label }}">{{ icon(link.icon) }}</a>
+{% elif link.url %}
+<a href="{{ link.url }}" aria-label="{{ link.label }}" title="{{ link.label }}" rel="me noopener">{{ icon(link.icon) }}</a>
+{% endif %}
+{% endmacro %}
+
+{% macro pub(p) %}
+<div class="pub">
+  <div class="ptitle">{{ p.title | rich }}</div>
+  <div class="authors">{{ p.authors | authors }} ({{ p.year }})</div>
+  {% if p.venue %}<div class="venue">{{ p.venue | rich }}</div>{% endif %}
+  {% if p.note %}<div class="note">{{ p.note | rich }}</div>{% endif %}
+  {% if p.links %}
+  <div class="plinks">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</div>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro entry(when, title, where='', detail='', points=[], url='') %}
+<div class="entry">
+  <div class="when">{{ when }}</div>
+  <div class="what">
+    <div class="title">{% if url %}<a href="{{ url }}">{{ title | rich }}</a>{% else %}{{ title | rich }}{% endif %}</div>
+    {% if where %}<div class="where">{{ where | rich }}</div>{% endif %}
+    {% if detail %}<div class="detail">{{ detail | rich }}</div>{% endif %}
+    {% if points %}<ul>{% for pt in points %}<li>{{ pt | rich }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+</div>
+{% endmacro %}

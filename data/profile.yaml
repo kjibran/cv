@@ -1,0 +1,303 @@
+# Everything on the CV except the publications (those are in publications.yaml).
+# Edit, push, and the website and the PDF rebuild themselves.
+# Text fields are plain text. Leave a value as "" to hide it.
+
+site:
+  url: https://kjibran.github.io/cv/        # with a trailing slash
+  title: "Jibran Khan, PhD | Air quality and noise modelling, Aarhus University"   # browser tab and search results
+  source_repo: https://github.com/kjibran/cv   # linked in the footer, "" to hide
+  language: en
+  goatcounter: kjibran                       # visitor statistics code, "" to turn off
+  google_verification: ""                    # only needed if the site is not under a verified property
+  pdf_name: Jibran_Khan_CV.pdf
+  timezone: Europe/Copenhagen                # for the "Last updated" date
+
+# Text around the selected papers on the main page. {total} becomes the number of publications.
+selected_publications:
+  heading: Selected publications
+  intro: Air pollution and noise modelling, measurements and machine learning.
+  more: "All {total} publications, including the health studies, are on the publications page."
+
+person:
+  name: Jibran Khan
+  title: Atmospheric scientist working on numerical modelling and physics-informed, data-driven methods
+  location: Copenhagen, Denmark
+  photo: photo.jpg                            # in the data folder, square works best
+  highlight_name: Khan, J.                   # how your name appears in author lists, shown in bold
+  email: jk.envs@gmail.com                   # shown as a protected link, never as plain text in the page
+  bio: >-
+    I am a computational environmental scientist at Aarhus University. I develop numerical
+    models, data assimilation and physics-informed machine learning for air pollution and
+    environmental noise, combining physical process models with satellite, in situ and
+    mobile observations. I build operational systems used by authorities and the public,
+    and lead externally funded research in Denmark and Europe.
+
+# Icons available: cv, mail, orcid, scholar, wos, scopus, researchgate, zenodo, linkedin, github, portfolio
+links:
+  - {icon: cv, label: CV as PDF, url: PDF}  # "PDF" points to the generated PDF
+  - {icon: mail, label: Email, url: EMAIL}  # "EMAIL" uses person.email, protected from spam bots
+  - {icon: orcid, label: ORCID, url: "https://orcid.org/0000-0003-2080-2871"}
+  - {icon: scholar, label: Google Scholar, url: "https://scholar.google.dk/citations?user=tUffwOIAAAAJ&hl=en"}
+  - {icon: wos, label: Web of Science, url: "https://www.webofscience.com/wos/author/record/AAQ-2177-2021"}
+  - {icon: scopus, label: Scopus, url: "https://www.scopus.com/authid/detail.uri?authorId=57201479843"}
+  - {icon: researchgate, label: ResearchGate, url: "https://www.researchgate.net/profile/Jibran-Khan"}
+  - {icon: zenodo, label: "Zenodo: open data, code and presentations", url: "https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier:%220000-0003-2080-2871%22"}
+  - {icon: linkedin, label: LinkedIn, url: "https://www.linkedin.com/in/jibran-khan-48601185/"}
+  - {icon: github, label: GitHub, url: "https://github.com/kjibran"}
+  - {icon: portfolio, label: "Portfolio: ML and AI engineering projects", url: "https://kjibran.github.io/"}
+
+metrics:
+  as_of: 10 October 2026
+  items:
+    - {label: h-index, value: "23 (Web of Science), 28 (Google Scholar)"}
+    - {label: Citations, value: "2,216 (Web of Science), 3,614 (Google Scholar)"}
+
+research_focus:
+  - Physics-informed and data-driven environmental modelling, including physics-informed neural networks
+  - Data assimilation, inverse modelling of emissions and uncertainty quantification
+  - Atmospheric dispersion across scales, from street canyons to national exposure models (Gaussian, box, Lagrangian, Eulerian, CFD)
+  - Integration of satellite, in situ and mobile observations into modelling frameworks
+  - Operational air quality forecasting and scientific software at national scale
+  - Environmental noise modelling and assessment
+  - Machine learning for atmospheric composition, noise and exposure modelling
+  - Climate and air quality interactions, and greenhouse gas monitoring
+
+positions:
+  - period: 2024–present
+    role: Docent (Associate Professor)
+    place: Department of Environmental and Biological Sciences, University of Eastern Finland, Kuopio, Finland
+    points:
+      - Teaching, research collaboration and doctoral supervision.
+  - period: 2023–present
+    role: Researcher (Assistant Professor)
+    place: Department of Environmental Science, Aarhus University, Roskilde, Denmark
+    points:
+      - Developed core scientific and software components of ByensLuft, Copenhagen's operational air quality forecasting platform with 4-day forecasts, used by more than 17,000 citizens through web and mobile apps (Python, PostgreSQL/PostGIS, PostgREST).
+      - Developed and applied national and street-scale dispersion models (AirGIS, OSPM, OML, OML-Highway), producing pollution maps for all state roads in Denmark.
+      - Lead a Google Research Scholar project on physics-informed neural networks for hyperlocal ultrafine particle prediction.
+      - Led the first systematic evaluation of the Nordic and European road traffic noise standards Nord2000, RTN-96 and CNOSSOS-EU against field measurements in Denmark.
+      - Led exposure assessment for national Danish cohort studies on air pollution, noise and health, contributing to more than 20 peer-reviewed publications.
+  - period: 2019–2022
+    role: Postdoctoral Fellow
+    place: Department of Environmental Science, Aarhus University, Roskilde, Denmark
+    points:
+      - Co-developed methods for hyperlocal mapping of nitrogen dioxide, black carbon and ultrafine particles with Google Street View cars in Amsterdam and Copenhagen. Results are public in Google's Environmental Insights Explorer (Air Quality Labs).
+      - Generated address-level exposure estimates with AirGIS for large Danish population cohorts.
+      - Evaluated low- and mid-cost air quality sensors, contributing to published guidance on sensor performance and deployment.
+  - period: 2016–2018
+    role: PhD Fellow
+    place: Department of Environmental Science, Aarhus University, Roskilde, Denmark
+    points:
+      - Developed and validated a new generation of AirGIS, Denmark's national GIS-based dispersion and exposure modelling system, rebuilt on open-source PostgreSQL/PostGIS for national-scale applications.
+      - Extended AirGIS to environmental noise, creating a combined air pollution and noise modelling framework.
+  - period: "2017"
+    role: Visiting Researcher (PhD research stay)
+    place: Department of Chemical Engineering, Texas A&M University at Qatar, Doha, Qatar
+    points: []
+  - period: 2013–2015
+    role: Lecturer in Physics and Engineering Physics
+    place: Dawood University of Engineering and Technology, Karachi, Pakistan
+    points: []
+  - period: 2011–2013
+    role: Lecturer
+    place: Pakistan Air Force Degree College, Karachi, Pakistan
+    points: []
+
+education:
+  - period: "2019"
+    degree: PhD in Environmental Science (Atmospheric Modelling)
+    place: Department of Environmental Science, Aarhus University, Denmark
+    detail: "Thesis: Air Quality and Noise Exposure Modelling System. Supervisors: Matthias Ketzel, Steen Solvang Jensen and Konstantinos Kakosimos."
+  - period: "2015"
+    degree: MPhil in Space Science
+    place: Institute of Space and Planetary Astrophysics, University of Karachi, Pakistan
+    detail: "Thesis: GIS Analysis of Renewable Solar Energy and its Sustainable Development for Karachi."
+  - period: "2007"
+    degree: MSc in Applied Physics
+    place: Department of Applied Physics, University of Karachi, Pakistan
+    detail: ""
+
+grants:
+  main:
+    - period: 2026–2028
+      name: "CAMS-MIND: Exploring the links between air pollution, heat and mental health through CAMS data integration"
+      funder: Copernicus Atmosphere Monitoring Service (CAMS), ECMWF
+      role: Main applicant
+      amount: EUR 300,000
+      url: ""
+    - period: 2025–2026
+      name: Physics-informed neural networks for hyperlocal ultrafine particle prediction
+      funder: Google Research Scholar Award
+      role: Principal investigator and project manager
+      amount: USD 60,000
+      url: ""
+    - period: 2024–2027
+      name: "MI-TRAP: Mitigating Traffic-Related Air Pollution and Noise"
+      funder: Horizon Europe
+      role: Aarhus University principal investigator and project manager
+      amount: DKK 2.6 million (Aarhus University budget)
+      url: "https://mitrap-project.eu/"
+    - period: 2024–2025
+      name: The Childhood Environment and Cognition Study (road traffic noise)
+      funder: University of Southern Denmark
+      role: Principal investigator and project manager
+      amount: DKK 250,000
+      url: ""
+    - period: 2024–2025
+      name: Nationwide calculation of traffic noise in Denmark
+      funder: AU Health, Aarhus University
+      role: Principal investigator and project manager
+      amount: DKK 130,000
+      url: ""
+    - period: 2023–2024
+      name: "NoiseCARD: Noise and Cardiovascular Diseases"
+      funder: Odense University Hospital
+      role: Principal investigator and project manager
+      amount: DKK 250,000
+      url: ""
+    - period: "2023"
+      name: "AI4TEN: Artificial Intelligence for Transport and Environmental Noise"
+      funder: Danish Ministry of Higher Education and Science
+      role: Principal investigator and project manager
+      amount: DKK 53,000
+      url: "https://danishsoundcluster.dk/artificial-intelligence-for-transport-and-environmental-noise/"
+  co:
+    - period: 2025–2029
+      name: EXPOSIM, exposure to air pollution and noise and immune health
+      funder: Horizon Europe
+      role: Work package 2 co-lead
+      amount: About EUR 736,000
+      url: ""
+    - period: 2024–2027
+      name: Copernicus Atmosphere Monitoring Service National Collaboration Programme, Denmark (CAMS2-72-DK-Bis)
+      funder: CAMS and ECMWF
+      role: Work package 6 lead, communication and outreach
+      amount: DKK 2.9 million (Aarhus University budget)
+      url: ""
+
+talks:
+  highlight:
+    - year: "2026"
+      title: "Predicting hourly ultrafine particle concentrations in Copenhagen using data-driven methods: an ML-driven operational nowcasting pipeline"
+      event: 15th International Conference on Air Quality, Prague, Czech Republic
+      authors: Khan, J., Pereira, L.G., Singh, R., Thürkow, M., Schaap, M., Ketzel, M., Jensen, S.S., & Massling, A.
+      url: "https://doi.org/10.5281/zenodo.23278826"
+  oral:
+    - {year: "2025", title: Short-term air pollution information and forecasting system for Copenhagen, event: "HARMO 23, Hamburg, Germany"}
+    - {year: "2025", title: "Automated traffic and noise monitoring with machine learning and AI: insights from recent experiments", event: "Acousticians' Day, Copenhagen, Denmark"}
+    - {year: "2024", title: "Inverse modelling of fine and ultrafine particle emission factors: a case study in Copenhagen, Denmark", event: "14th International Conference on Air Quality, Helsinki, Finland"}
+    - {year: "2024", title: "Case-study analysis of traffic noise at Vesterbrogade, Denmark", event: "InterNoise 2024, Nantes, France"}
+    - {year: "2023", title: A novel model system to estimate near real-time personal exposure to hyperlocal air pollution, event: "ISES Annual Meeting, Chicago, USA"}
+    - {year: "2023", title: Assessment of road traffic noise using mobile monitoring and statistical modelling, event: "Forum Acusticum, Torino, Italy"}
+    - {year: "2022", title: Validation of Nordic and European road traffic noise standards along a major highway, event: "Baltic-Nordic Acoustic Meeting, Aalborg, Denmark"}
+    - {year: "2021", title: A dynamic activity-based modelling approach to estimate air pollution exposure, event: "HARMO 20, Tartu, Estonia (online)"}
+  poster:
+    - {year: "2021", title: Predicting street-scale NO2 and PM2.5 concentrations using machine learning, event: "ITM 2021, Barcelona, Spain"}
+    - {year: "2019", title: "From pixel to pollution: estimating daily PM2.5 using MAIAC AOD, a case study of Copenhagen", event: "Nordic Remote Sensing Conference, Aarhus, Denmark"}
+
+teaching:
+  - period: 2024–present
+    role: Course responsible and instructor, Advanced GIS in Health Sciences (5 ECTS, PhD level)
+    place: Aarhus University
+    detail: Spatial modelling of environmental pollution, GIS programming, spatial databases, interpolation, spatial autocorrelation and visualisation with R, Python, QGIS, ArcGIS and spatial SQL.
+  - period: 2024–present
+    role: Lecturer, Environmental Modelling Summer and Winter School
+    place: University of Eastern Finland
+    detail: Air quality modelling, environmental measurements, data analysis and spatial modelling for graduate and doctoral students.
+  - period: 2019–present
+    role: Lecturer and course organiser in environmental modelling, acoustics, data science and programming
+    place: Aarhus University, across several departments
+    detail: Air quality modelling, urban acoustics and road traffic noise, data science with Python and R, satellite data analysis, GIS, AI-assisted scientific programming and scientific writing.
+  - period: 2023–2025
+    role: Guest lecturer
+    place: Technical University of Denmark and University of Copenhagen
+    detail: Atmospheric transport, dispersion and transformation in Global and Regional Air Pollution and Urban Air Pollution (DTU), and environmental noise, exposure assessment and health (KU).
+  - period: 2011–2015
+    role: Lecturer in physics and engineering physics
+    place: Dawood University of Engineering and Technology and Pakistan Air Force Degree College, Karachi
+    detail: Undergraduate and graduate courses in physics, engineering mechanics, electronics, thermodynamics and quantum mechanics, including laboratory teaching.
+
+supervision:
+  - period: 2025–present
+    role: PhD co-supervisor
+    who: Phuong Le, University of Eastern Finland (with Professor Mikko Kolehmainen)
+    topic: "From LiDAR point cloud to solar-ready roof models: roof structure extraction, segmentation and post-processing"
+  - period: "2026"
+    role: Main supervisor, MSc thesis
+    who: Magnus Gasseholm Bæk and Gustav Gjessing Bruun, Department of Civil and Architectural Engineering, Aarhus University
+    topic: A geometry-aware ANN surrogate model framework for predicting wind pressure coefficients on buildings of varying complexity
+  - period: "2025"
+    role: Main and external supervisor, MSc thesis
+    who: Polyvios Gereoudakis, Department of Environmental and Resource Engineering, Technical University of Denmark
+    topic: "Ultrafine particle pollution in airport environments: employee and passenger exposure and effects on urban air quality"
+  - period: "2024"
+    role: Main and external supervisor, MSc thesis
+    who: Jeremy Wilson, Department of Environmental and Resource Engineering, Technical University of Denmark
+    topic: "Exploring the relationship between street-level air pollution and land cover types in Copenhagen: a machine learning approach"
+  - period: 2018–present
+    role: Supervisor, co-supervisor and examiner
+    who: Several MSc and BSc theses at Aarhus University, AU Health, Technical University of Denmark and University of Eastern Finland
+    topic: Air pollution emissions and health, GIS and remote sensing, street-scale air pollution, land-use analysis and web GIS
+
+advisory:
+  - name: Danish National Monitoring Programme for Water and Nature (NOVANA)
+    detail: National assessment and modelling of air pollution, reported to the Danish Ministry of Environment and the European Union. Ongoing.
+  - name: Real-time air pollution information and forecasting system, Municipality of Copenhagen
+    detail: Scientific and technical support for an operational forecasting system supporting municipal decisions and public health measures.
+  - name: Review of the Danish Road Directorate's ENVI model (environmental external effects)
+    detail: Expert review of the national noise modelling used to estimate traffic-related noise and external costs.
+  - name: Air pollution maps for Danish state roads with OML-Highway, Danish Road Directorate
+    detail: National mapping of air pollution along state roads, including re-implementation and optimisation of OML-Highway components in R.
+
+service:
+  - group: Committees and working groups
+    items:
+      - Member, Task Force on Integrated Assessment Modelling (TFIAM), UNECE Convention on Long-range Transboundary Air Pollution, since 2024
+      - Member, FAIRMODE EU Working Group 6, Low-cost Sensors and Data Fusion for Air Quality, since 2023
+      - Institutional contact point for EURAMET, the European Association of National Metrology Institutes
+      - Institutional contact point for environmental noise research, Department of Environmental Science, Aarhus University
+  - group: Assessment and editorial work
+    items:
+      - Member of the PhD assessment committee for Siddharth Venkataraman, KTH Royal Institute of Technology, Sweden, 2025
+      - Guest editor, MDPI Atmosphere special issue "Air Quality and Sustainable Development Goals (SDGs)"
+      - Reviewer for international journals in air quality, noise, environmental modelling and exposure science
+  - group: Professional societies
+    items:
+      - Founding Chair, Danish Young Acousticians Network (DYAN), Danish Acoustical Society
+      - Member, Environmental Acoustics Technical Committee, Danish Acoustical Society
+  - group: Departmental service and leadership
+    items:
+      - Former member, Research Committee and Institute Forum, Department of Environmental Science, Aarhus University
+      - Coordination of several air pollution exposure projects at Aarhus University, 2016–2021
+      - Organiser and course lead, "Modelling of Air Pollution for Users of Modelled Data in Health Studies", Aarhus University, 2019
+  - group: Outreach
+    items:
+      - Invited public lecturer, Aarhus University GIS Day, Moesgaard Museum, 2023
+      - Organiser of national and international scientific conferences and expert meetings in Denmark and Pakistan
+
+visits:
+  - period: "2023"
+    place: Department of Global Health and Social Medicine, King's College London, United Kingdom
+    detail: Climate change and health research with a focus on older populations (host Professor Matthew Prina).
+  - period: "2023"
+    place: Department of Environmental and Biological Sciences, University of Eastern Finland
+    detail: Air quality modelling capabilities and national monitoring infrastructure (host Professor Mikko Kolehmainen).
+  - period: "2022"
+    place: Environmental Informatics Research Group, Aristotle University of Thessaloniki, Greece
+    detail: Machine learning, satellite data, data fusion and low-cost sensor networks for air quality (host Professor Kostas Karatzas).
+  - period: "2019"
+    place: Global Centre for Clean Air Research, University of Surrey, United Kingdom
+    detail: High-resolution air pollution modelling and low-cost sensors (host Professor Prashant Kumar).
+
+awards:
+  - {year: "2025", name: Google Research Scholar Award, detail: "Competitive international award to early-career faculty, for physics-informed prediction of ultrafine particles."}
+  - {year: "2022", name: Circle U Early-Career Researcher Mobility Grant, detail: "Competitive award across the Circle U European university alliance, for a research visit to King's College London."}
+  - {year: "2021", name: MDPI Atmosphere Travel Award, detail: "For participation in ITM 2021, Barcelona."}
+
+skills:
+  - {group: Programming and computing, items: "Python, R, SQL, MATLAB, Fortran. NumPy, SciPy, pandas, scikit-learn, PyTorch, TensorFlow, Keras. REST APIs, PostgREST, Nginx"}
+  - {group: Modelling software, items: "AirGIS, OSPM, OML-Highway, SoundPLAN. OpenFOAM and STAR-CCM+ (in progress)"}
+  - {group: Geospatial and remote sensing, items: "QGIS, ArcGIS, PostgreSQL/PostGIS, Google Earth Engine. Sentinel-5P TROPOMI, MAIAC AOD, Copernicus CAMS"}
+  - {group: Reproducible workflows, items: "Git, GitHub, GitHub Actions, SVN. Open-source scientific software at national scale"}
+
+languages: "English (fluent), Danish (intermediate, used professionally), Urdu (native)"

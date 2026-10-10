@@ -1,0 +1,621 @@
+# Every publication, newest first within each type.
+# type: journal, chapter, report or proceedings. selected: true shows it on the main page.
+# The author name to highlight is set in data/profile.yaml (highlight_name).
+
+- type: journal
+  year: 2026
+  authors: "Khan, J."
+  title: "AI4TEN: Fine-Tuning Pre-Trained Audio Transformers (BEATs, AST) for Cross-Dataset Acoustic Vehicle Classification with Domain Adaptation"
+  venue: "Acoustics, 8(3), 63"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/acoustics8030063"}
+    - {label: "Code and data", url: "https://doi.org/10.5281/zenodo.22203993"}
+
+- type: journal
+  year: 2026
+  authors: "Šulc, L., Martínez, N. S., Wu, F., Sjöström, M., Pasanen, T. P., Tiittanen, P., ...., Khan, J., .... & Selander, J."
+  title: "Occupational Noise Exposure During Pregnancy and Birth Outcomes: A Large-Scale Cohort Study in Nordic Countries"
+  venue: "Environmental Research, 125602"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envres.2026.125602"}
+
+- type: journal
+  year: 2026
+  authors: "Khan, J., Ryzhikov, I., & Kolehmainen, M."
+  title: "AI4TEN: Synthetic-to-Real Transfer for Acoustic Vehicle Classification Using Physics-Based and AI-Generated Training Data"
+  venue: "Applied Sciences, 16(14), 7234"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/app16147234"}
+    - {label: "Code and data", url: "https://doi.org/10.5281/zenodo.21264250"}
+
+- type: journal
+  year: 2026
+  authors: "Khan, J., Keller, R., & Nordstrøm, C."
+  title: "Hybrid Machine Learning and Data Assimilation for Street-Level NO2 and PM2.5 Prediction in Copenhagen, Denmark (2001–2018)"
+  venue: "Atmosphere, 17(7), 647"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/atmos17070647"}
+
+- type: journal
+  year: 2026
+  authors: "Birinci, E., Özdemir, H., Özdemir, E. T., Deniz, A., & Khan, J."
+  title: "Part A: Data Collection, Processing, and Characterization of a High-Resolution Dataset for Street-Scale Air Quality Modeling in Barbaros Street, Beşiktaş, Istanbul"
+  venue: "Atmosphere, 17(7), 681"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/atmos17070681"}
+
+- type: journal
+  year: 2026
+  authors: "Dolšak Lavrič, P., Bec, D., Ciglenečki, D., Orgin, M., Turšič, J., Stegnar, G., Khan, J., & Kukec, A."
+  title: "Development of an hourly bottom-up emission inventory to assess air pollution dispersion with GRAMM/GRAL in complex terrain"
+  venue: "Air Quality, Atmosphere & Health, 19, 102"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1007/s11869-026-01992-9"}
+
+- type: journal
+  year: 2026
+  authors: "Fleischer, N. L., Flachs, E. M., Ketzel, M., Brandt, J., Khan, J., Gustavsson, P., .... & Wils, R. S."
+  title: "Long-term exposure to ambient air pollution and risk of incident acute myocardial infarction in a nationwide register-based cohort study"
+  venue: "International Archives of Occupational and Environmental Health, 99(2), 9"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1007/s00420-025-02198-9"}
+
+- type: journal
+  year: 2025
+  authors: "Bagkis, E., Hassani, A., Schneider, P., DeSouza, P., Shetty, S., Kassandros, T., .... & Khan, J."
+  title: "Evolving trends in application of low-cost air quality sensor networks: challenges and future directions"
+  venue: "npj Climate and Atmospheric Science, 8(1), 335"
+  note: "Senior and corresponding author"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1038/s41612-025-01216-4"}
+
+- type: journal
+  year: 2025
+  authors: "Kerckhoffs, J.*, Hofman, J.*, Khan, J., Adams, M. D., Blanco, M. N., deSouza, P., .... & Amini, H."
+  title: "Mobile monitoring of air pollution: a position paper on use cases, good practices, challenges, and opportunities"
+  venue: "Environment International, 202, 109582"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envint.2025.109582"}
+
+- type: journal
+  year: 2025
+  authors: "Jensen, S. S., Ketzel, M., Khan, J., Valencia, V. H., Brandt, J., Christensen, J. H., .... & Ellermann, T."
+  title: "Air Quality at Your Street 2.0: Air Quality Modelling for All Streets in Denmark"
+  venue: "Atmosphere, 16(12), 1346"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/atmos16121346"}
+
+- type: journal
+  year: 2025
+  authors: "Mayntz, S. P., Warncke, S., Ladefoged, L. G., Mohamed, R. A., Mejldal, A., Lindholt, J. S., ....., Khan, J. & Lambrechtsen, J."
+  title: "Do PM2.5 pollution peaks matter? Examining cardiovascular risk in the AIRCARD study"
+  venue: "European Heart Journal, 46, ehaf784-1946"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1093/eurheartj/ehaf784.1946"}
+
+- type: journal
+  year: 2025
+  authors: "Mohamed, R. A., Peronard Mayntz, S., Møller, J. J. K., Mejldal, A., Schultz Overgaard, K., Rueskov Andersen, T., Madsen, F.S., Frohn, L.M., Brandt, J., Ketzel, M., Khan, J., ... & Lambrechtsen, J."
+  title: "Long-term ambient air pollution exposure and coronary calcium score in men: insights from the DANCAVAS study"
+  venue: "European Journal of Preventive Cardiology, zwaf688"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1093/eurjpc/zwaf688"}
+
+- type: journal
+  year: 2025
+  authors: "Wils, R. S., Nielsen, H. B., Flachs, E. M., Andersen, A. J., Dreyer, L. W., Ketzel, M., Brandt, J., Khan, J., ... & Hougaard, K. S."
+  title: "Air pollution and risk of rheumatoid arthritis: a Danish register-based cohort study"
+  venue: "Environmental Toxicology and Pharmacology, 104855"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.etap.2025.104855"}
+
+- type: journal
+  year: 2025
+  authors: "Mayntz, S. P., Mohamed, R. A., Mejldal, A., Møller, J. J. K., Lindholt, J. S., Diederichsen, A. C. P., ...., Khan, J., & Lambrechtsen, J."
+  title: "Association Between Long-Term Fine Particulate Matter Exposure and Incident Type 2 Diabetes in a Low-Exposure Danish Cohort: An AIRCARD Analysis"
+  venue: "Diabetes & Metabolic Syndrome: Clinical Research & Reviews, 103298"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.dsx.2025.103298"}
+
+- type: journal
+  year: 2025
+  authors: "Mayntz, S. P., Mohamed, R. A., Mejldal, A., Møller, J. J. K., Lindholt, J. S., Diederichsen, A. C., ... , Khan, J., & Lambrechtsen, J."
+  title: "Long-Term Road Traffic Noise, Air Pollution, and Cardiovascular Disease AIRCARD: A Prospective Cohort Study"
+  venue: "JACC: Advances, 4(6_Part_1), 101787"
+  links:
+    - {label: "Full text", url: "https://www.jacc.org/doi/abs/10.1016/j.jacadv.2025.101787"}
+
+- type: journal
+  year: 2025
+  authors: "Sonnenschein, T. S., Yuan, Z., Khan, J., Kerckhoffs, J., Vermeulen, R. C., & Scheider, S."
+  title: "Hybrid cellular automata-based air pollution model for traffic scenario microsimulations"
+  venue: "Environmental Modelling & Software, 186, 106356"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envsoft.2025.106356"}
+
+- type: journal
+  year: 2025
+  authors: "Khanh, H. N. T., Stafoggia, M., Sørensen, M., Poulsen, A. H., Raaschou-Nielsen, O., Khan, J., .... & de Bont, J."
+  title: "Exploring the interaction between ambient air pollution and road traffic noise on stroke incidence in ten Nordic cohorts"
+  venue: "Environment International, 198, 109403"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envint.2025.109403"}
+
+- type: journal
+  year: 2025
+  authors: "Wesselink, A. K., Johannesen, B. R., Wang, T. R., Ketzel, M., Mikkelsen, E. M., Brandt, J., Khan, J., .... & Hatch, E. E."
+  title: "Residential Exposure to PM2.5 Constituents and Fecundability in a Danish Preconception Cohort"
+  venue: "Paediatric and Perinatal Epidemiology, 39(3), 256-261"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1111/ppe.13174"}
+
+- type: journal
+  year: 2025
+  authors: "Pasanen, T. P., Tiittanen, P., Roswall, N., Waye, K. P., Selander, J., Martinez, N. S., ....., Khan, J., &.. Lanki, T."
+  title: "Occupational noise exposure and maternal pregnancy complications: register-based cohort from urban areas in four Nordic countries"
+  venue: "Occupational and Environmental Medicine"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1136/oemed-2024-109724"}
+
+- type: journal
+  year: 2024
+  authors: "Pedersen, M., Liu, S., Andersen, Z. J., Nybo Andersen, A.-M., Brandt, J., ... Khan, J., ... & Loft, S."
+  title: "Birth Cohort Studies of Long-term Exposure to Ambient Air Pollution in Early Life and Development of Asthma in Children and Adolescents from Denmark"
+  venue: "Health Effects Institute"
+  links:
+    - {label: "Full text", url: "https://www.healtheffects.org/publication/birth-cohort-studies-long-term-exposure-ambient-air-pollution-early-life-and-development"}
+
+- type: journal
+  year: 2024
+  authors: "Sørensen, M., Poulsen, A. H., Nøhr, B., Khan, J., Ketzel, M., Brandt, J., .... & Jensen, A."
+  title: "Long term exposure to road traffic noise and air pollution and risk of infertility in men and women: nationwide Danish cohort study"
+  venue: "BMJ, 386"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1136/bmj-2024-080664"}
+
+- type: journal
+  year: 2024
+  authors: "Yuan, Z., Kerckhoffs, J., Li, H., Khan, J., Hoek, G., & Vermeulen, R."
+  title: "Hyperlocal Air Pollution Mapping: A Scalable Transfer Learning LUR Approach for Mobile Monitoring"
+  venue: "Environmental Science & Technology, 58(32), 14372-14383"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1021/acs.est.4c06144"}
+
+- type: journal
+  year: 2024
+  authors: "Stepien, E. N., Khan, J., Galatius, A., & Teilmann, J."
+  title: "How low can you go? Exploring impact of drones on haul out behaviour of harbour-and grey seals"
+  venue: "Frontiers in Marine Science, 11, 1411292"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3389/fmars.2024.1411292"}
+
+- type: journal
+  year: 2024
+  authors: "Amini, H., Bergmann, M. L., Shahri, S. M. T., Tayebi, S., Cole-Hunter, T., Kerckhoffs, J., Khan, J., .... & Schwartz, J."
+  title: "Harnessing AI to unmask Copenhagen's invisible air pollutants: A study on three ultrafine particle metrics"
+  venue: "Environmental Pollution, 123664"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envpol.2024.123664"}
+
+- type: journal
+  year: 2023
+  authors: "Khan, J., Thysell, E., Backalarz, C., Finne, P., Hertel, O., & Jensen, S. S."
+  title: "Performance Evaluation of Nord2000, RTN-96 and CNOSSOS-EU against Noise Measurements in Central Jutland, Denmark"
+  venue: "Acoustics, 5(4), 1099–1122"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/acoustics5040062"}
+
+- type: journal
+  year: 2023
+  authors: "Tayebi, S., Kerckhoffs, J., Khan, J., de Hoogh, K., Chen, J., Shahri, S. M. H., Bergmann, M. L., Cole-Hunter, T., Lim, Y.H., Mortensen, L. M., Hertel, O., Reeh, R., Schwartz, J., Hoek, G., Vermeulen, R., Andersen, Z. J., Loft, S. and Amini, H."
+  title: "Comparison of NO2 and BC Predictions Estimated Using Google Street View-Based and Conventional European-Wide LUR Models in Copenhagen, Denmark"
+  venue: "Atmosphere, 14(11), 1602"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3390/atmos14111602"}
+
+- type: journal
+  year: 2023
+  authors: "Frederickson, L. B., Russell, H. S., Fessa, D., Khan, J., Schmidt, J. A., Johnson, M. S., & Hertel, O."
+  title: "Hyperlocal air pollution in an urban environment measured with low-cost sensors"
+  venue: "Urban Climate, 52, 101684"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.uclim.2023.101684"}
+
+- type: journal
+  year: 2023
+  authors: "Harbo Poulsen, A., Sørensen, M., Hvidtfeldt, U. A., Ketzel, M., Christensen, J. H., Brandt, J., ... Khan, J., .... & Raaschou-Nielsen, O."
+  title: "Concomitant exposure to air pollution, green space and noise, and risk of myocardial infarction. A cohort study from Denmark"
+  venue: "European Journal of Preventive Cardiology"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1093/eurjpc/zwad306"}
+
+- type: journal
+  year: 2023
+  authors: "Horsdal, H. T., Pedersen, M. G., Schullehner, J., Østergaard, C. S., Mcgrath, J. J., Agerbo, E., .... Khan, J., ... & Pedersen, C. B."
+  title: "Perspectives on environment and health research in Denmark"
+  venue: "Scandinavian Journal of Public Health"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1177/14034948231178076"}
+
+- type: journal
+  year: 2023
+  authors: "Pedersen, M., Liu, S., Zhang, J., Jovanovic Andersen, Z., Brandt, J., Budtz- Jørgensen, E.,. Khan, J., .... & Loft, S."
+  title: "Early-Life Exposure to Ambient Air Pollution from Multiple Sources and Asthma Incidence in Children: A Nationwide Birth Cohort Study from Denmark"
+  venue: "Environmental Health Perspectives, 131(5), 057003"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1289/EHP11539"}
+
+- type: journal
+  year: 2023
+  authors: "Poulsen, A. H., Sørensen, M., Hvidtfeldt, U. A., Ketzel, M., Christensen, J. H., Brandt, J., Khan, J., .... & Raaschou-Nielsen, O."
+  title: "Air pollution and stroke: effect modification by sociodemographic and environmental factors. A cohort study from Denmark"
+  venue: "International Journal of Hygiene and Environmental Health, 251, 114165"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.ijheh.2023.114165"}
+
+- type: journal
+  year: 2023
+  authors: "Nunez, Y., Balalian, A., Parks, R. M., He, M. Z., Hansen, J., Raaschou-Nielsen, O., Khan, J., .... & Kioumourtzoglou, M. A."
+  title: "Exploring Relevant Time Windows in the Association Between PM2.5 Exposure and Amyotrophic Lateral Sclerosis: A Case-Control Study in Denmark"
+  venue: "American Journal of Epidemiology, kwad099"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1093/aje/kwad099"}
+
+- type: journal
+  year: 2023
+  authors: "Poulsen, A. H., Sørensen, M., Hvidtfeldt, U. A., Frohn, L. M., Ketzel, M., Christensen, J. H., Khan, J., .... & Raaschou-Nielsen, O."
+  title: "Air pollution and myocardial infarction: effect modification by sociodemographic and environmental factors. A cohort study from Denmark"
+  venue: "Environmental Research, 229, 115905"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envres.2023.115905"}
+
+- type: journal
+  year: 2023
+  authors: "Sørensen, M., Raaschou-Nielsen, O., Poulsen, A. H., Hvidtfeldt, U. A., Brandt, J., Khan, J., .... & Thacher, J. D."
+  title: "Long-term exposure to residential transportation noise and mortality: A nationwide cohort study"
+  venue: "Environmental Pollution, 328, 121642"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envpol.2023.121642"}
+
+- type: journal
+  year: 2023
+  authors: "Roswall, N., Thacher, J. D., Ögren, M., Pyko, A., Åkesson, A., Oudin, A., Khan, J., .... & Sørensen, M."
+  title: "Long-term exposure to traffic noise and risk of incident colon cancer: A pooled study of eleven Nordic cohorts"
+  venue: "Environmental Research, 224, 115454"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envres.2023.115454"}
+
+- type: journal
+  year: 2022
+  authors: "Kerckhoffs, J.*, Khan, J.*, Hoek, G., Yuan, Z., Hertel, O., Ketzel, M., .... & Vermeulen, R."
+  title: "Hyperlocal variation of nitrogen dioxide, black carbon, and ultrafine particles measured with Google Street View cars in Amsterdam and Copenhagen"
+  venue: "Environment International, 170, 107575"
+  note: "Shared first author"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envint.2022.107575"}
+
+- type: journal
+  year: 2022
+  authors: "Thacher, J. D., Poulsen, A. H., Raaschou-Nielsen, O., Hvidtfeldt, U. A., Brandt, J., Christensen, J. H., Khan, J., .... & Sørensen, M."
+  title: "Exposure to transportation noise and risk for cardiovascular disease in a nationwide cohort study from Denmark"
+  venue: "Environmental Research, 113106"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envres.2022.113106"}
+
+- type: journal
+  year: 2022
+  authors: "Erdmann, F., Raaschou-Nielsen, O., Hvidtfeldt, U.A., Ketzel, M., Brandt, J., Khan, J., Schüz, J., & Sørensen, M."
+  title: "Residential road traffic and railway noise and risk of childhood cancer: A nationwide register-based case-control study in Denmark"
+  venue: "Environmental Research"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envres.2022.113180"}
+
+- type: journal
+  year: 2022
+  authors: "Thacher, J.D., Roswall, R., Lissåker, C., Aasvang, G.M., Albin, M., Andersson, E. M., Engström, G., Eriksson, E., Hvidtfeldt, U.A., Ketzel, M., Khan, J., Lanki, T., ... , Ögren, M., Selander, J. & Sørensen M."
+  title: "Occupational noise exposure and risk of incident stroke: a pooled study of five Scandinavian cohorts"
+  venue: "Occupational and Environmental Medicine"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1136/oemed-2021-108053"}
+
+- type: journal
+  year: 2022
+  authors: "Kerckhoffs, J., Khan, J., Hoek, G., Yuan, Z., Ellermann, T., Hertel, O., Ketzel, M., Jensen, S.S., Meliefste, K., Vermeulen, R."
+  title: "A Mixed-effects Modelling Framework for Amsterdam and Copenhagen for Outdoor NO2 Concentrations using Measurements Sampled with Google Street View Cars"
+  venue: "Environmental Science & Technology, 56(4), 2011–2020"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1021/acs.est.1c05806"}
+
+- type: journal
+  year: 2022
+  authors: "Bergmann, M. L., Andersen, Z. J., Amini, H., Khan, J., Lim, Y. H., Loft, S., .... & Cole-Hunter, T."
+  title: "Ultrafine particle exposure for bicycle commutes in rush and non-rush hour traffic: A repeated measures study in Copenhagen, Denmark"
+  venue: "Environmental Pollution, 294, 118631"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envpol.2021.118631"}
+
+- type: journal
+  year: 2022
+  authors: "Sørensen, M., Hvidtfeldt, U. A., Poulsen, A. H., Thygesen, L. C., Frohn, L. M., Ketzel, M., Christensen, J., Brandt, J., Khan, J. & Raaschou-Nielsen, O."
+  title: "The effect of adjustment to register-based and questionnaire-based covariates on the association between air pollution and cardiometabolic disease"
+  venue: "Environmental Research, 203, 111886"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envres.2021.111886"}
+
+- type: journal
+  year: 2021
+  authors: "Khan, J., Ketzel, M., Jensen, S. S., Gulliver, J., Thysell, E., & Hertel, O."
+  title: "Comparison of Road Traffic Noise prediction models: CNOSSOS-EU, Nord2000 and TRANEX"
+  venue: "Environmental Pollution, 270, 116240"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envpol.2020.116240"}
+
+- type: journal
+  year: 2021
+  authors: "Wesselink, A. K., Wang, T. R., Ketzel, M., Mikkelsen, E. M., Brandt, J., Khan, J., .... & Hatch, E. E."
+  title: "Air pollution and fecundability: Results from a Danish preconception cohort study"
+  venue: "Pediatric and Perinatal Epidemiology, 36(1), 57-67"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1111/ppe.12832"}
+
+- type: journal
+  year: 2021
+  authors: "Cantuaria, M.L., Waldorff, F.B., Wermuth, L., Pedersen, E.R., Poulsen, A.H., Thacher, J., Raaschou-Nielsen, O., Ketzel, M., Christensen, J., Khan, J., Valencia, V.H., Schmidt, J., Sørensen, M."
+  title: "Residential exposure to transportation noise and incidence of dementia: a national cohort study"
+  venue: "BMJ, 374, n1954"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1136/bmj.n1954"}
+
+- type: journal
+  year: 2021
+  authors: "Ketzel, M., Frohn, L. M., Christensen, J. H., Brandt, J., Massling, A., Andersen, C., Im, U., Jensen, S.S., Khan, J., Nielsen, O-K., Plejdrup, ... & Raaschou-Nielsen, O."
+  title: "Modelling ultrafine particle number concentrations at address resolution in Denmark from 1979 to 2018-Part 2: Local and street scale modelling and evaluation"
+  venue: "Atmospheric Environment, 264, 118633"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.atmosenv.2021.118633"}
+
+- type: journal
+  year: 2021
+  authors: "Thacher, J.D., Poulsen, A.H., Hvidtfeldt, U.A., Raaschou-Nielsen, O., Brandt, J., Geels, C., Khan, J., Münzel, J., Sørensen, M"
+  title: "Long-term exposure to transportation noise and risk for type 2 diabetes in a nationwide cohort study from Denmark"
+  venue: "Environmental Health Perspectives, 129(12), 127003"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1289/EHP9146"}
+
+- type: journal
+  year: 2021
+  authors: "Scholten, R. H., Møller, P., Andersen, Z. J., Dehlendorff, C., Khan, J., Brandt, J., .... & Mathiesen, L."
+  title: "Telomere length in newborns is associated with exposure to low levels of air pollution during pregnancy"
+  venue: "Environment International, 146, 106202"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envint.2020.106202"}
+
+- type: journal
+  year: 2020
+  authors: "Khan, J., Kakosimos, K., Jensen, S. S., Hertel, O., Sørensen, M., Gulliver, J., & Ketzel, M."
+  title: "The spatial relationship between traffic-related air pollution and noise in two Danish cities: Implications for health-related studies"
+  venue: "Science of the Total Environment, 726, 138577"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.scitotenv.2020.138577"}
+
+- type: journal
+  year: 2019
+  authors: "Khan, J., Kakosimos, K., Raaschou-Nielsen, O., Brandt, J., Jensen, S. S., Ellermann, T., & Ketzel, M."
+  title: "Development and performance evaluation of new AirGIS: a GIS-based air pollution and human exposure modelling system"
+  venue: "Atmospheric Environment, 198, 102-121"
+  selected: true
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.atmosenv.2018.10.036"}
+
+- type: journal
+  year: 2019
+  authors: "Hvidtfeldt, U. A., Geels, C., Sørensen, M., Ketzel, M., Khan, J., Tjønneland, A., .... & Raaschou-Nielsen, O."
+  title: "Long-term residential exposure to PM2.5 constituents and mortality in a Danish cohort"
+  venue: "Environment International, 133, 105268"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envint.2019.105268"}
+
+- type: journal
+  year: 2018
+  authors: "Khan, J., Ketzel, M., Kakosimos, K., Sørensen, M., & Jensen, S. S."
+  title: "Road traffic air and noise pollution exposure assessment: A review of tools and techniques"
+  venue: "Science of the Total Environment, 634, 661-676"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.scitotenv.2018.03.374"}
+
+- type: journal
+  year: 2018
+  authors: "Hvidtfeldt, U. A., Sørensen, M., Geels, C., Ketzel, M., Khan, J., Tjønneland, A., .... & Raaschou-Nielsen, O."
+  title: "Long-term residential exposure to PM2.5, PM10, black carbon, NO2, and ozone and mortality in a Danish cohort"
+  venue: "Environment International, 123, 265-272"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.envint.2018.12.010"}
+
+- type: journal
+  year: 2018
+  authors: "Hvidtfeldt, U. A., Ketzel, M., Sørensen, M., Hertel, O., Khan, J., Brandt, J., & Raaschou-Nielsen, O."
+  title: "Evaluation of the Danish AirGIS air pollution modeling system against measured concentrations of PM2.5, PM10, and black carbon"
+  venue: "Environmental Epidemiology, 2(2), e014"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1097/EE9.0000000000000014"}
+    - {label: "Full text", url: "https://pure.au.dk/ws/files/128394898/Evaluation_of_the_Danish_AirGIS_air_pollution.6.pdf"}
+
+- type: journal
+  year: 2016
+  authors: "Khan, J., & Arsalan, M. H."
+  title: "Solar power technologies for sustainable electricity generation: A review"
+  venue: "Renewable and Sustainable Energy Reviews, 55, 414-425"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.rser.2015.10.135"}
+
+- type: journal
+  year: 2016
+  authors: "Khan, J., & Arsalan, M. H."
+  title: "Estimation of rooftop solar photovoltaic potential using geo-spatial techniques: A perspective from planned neighborhood of Karachi–Pakistan"
+  venue: "Renewable Energy, 90, 188-203"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1016/j.renene.2015.12.058"}
+
+- type: journal
+  year: 2016
+  authors: "Khan, J. & Arsalan, M. H."
+  title: "Implementation of Open-Source GIS Tools to Identify Bright Rooftops for Solar Photovoltaic Applications: A Case Study of Creek Lanes, DHA, Karachi"
+  venue: "Journal of Basic and Applied Sciences, 12, 14–22"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.6000/1927-5129.2016.12.03"}
+    - {label: "Full text", url: "https://zenodo.org/records/23271237"}
+
+- type: journal
+  year: 2016
+  authors: "Khan, J., & Qazi, W.A."
+  title: "On the Use of ALOS-PALSAR Mosaics to Study Ocean Surface Features of Pakistan Coastal Region"
+  venue: "Journal of Space Technology, 4(1)"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.5281/zenodo.23271185"}
+
+- type: journal
+  year: 2013
+  authors: "Khan, J."
+  title: "Preliminary Results - Hyperspectral Image Analysis for Dolomite Identification in Tarbela Dam Region of Pakistan"
+  venue: "International Journal of Innovative Technology and Exploring Engineering, 2(3), 30–34"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.5281/zenodo.23271079"}
+
+- type: chapter
+  year: 2021
+  authors: "Sabel, C., Amegbor, P.M., Zhang, Z., Chen, K., Poulsen, M.B., Hertel, O., Sigsgaard, T., Horsdal, H.T, Pedersen, C.B., & Khan, J."
+  title: "Urban Health and Wellbeing"
+  venue: "In: Shi, W., Goodchild, M., Batty, M., Kwan, M.-P. (eds) Urban Informatics. Springer"
+  links:
+    - {label: "Full text", url: "https://link.springer.com/chapter/10.1007/978-981-15-8983-6_17"}
+
+- type: report
+  year: 2026
+  authors: "Jensen, S.S., Ketzel, M., Khan, J., & Christensen, J.H."
+  title: "Integration af Tårnby Kommune i prognosesystemet Byens Luft"
+  venue: "Aarhus Universitet, DCE – Nationalt Center for Miljø og Energi. Fagligt notat nr. 43"
+  links:
+    - {label: "Full text", url: "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2026/N2026_43.pdf"}
+
+- type: report
+  year: 2026
+  authors: "Lansø, A.S. & Khan, J."
+  title: "Opdatering af indlæsning af terrændata i OML-Multi"
+  venue: "Aarhus Universitet, DCE – Nationalt Center for Miljø og Energi. Fagligt notat nr. 2026|15"
+  links:
+    - {label: "Full text", url: "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2026/N2026_15.pdf"}
+
+- type: report
+  year: 2025
+  authors: "Lansø, A. S., Winther, M., & Khan, J."
+  title: "Impacts of onshore power installation in four Baltic Sea ports: emissions of air pollutants and greenhouse gases, air pollution and noise"
+  venue: "Aarhus University, DCE – Danish Centre for Environment and Energy. Scientific Report No. 637"
+  links:
+    - {label: "Full text", url: "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Videnskabelige_rapporter_600-699/SR637.pdf"}
+
+- type: report
+  year: 2025
+  authors: "Jensen, S. S., Khan, J., Christensen, J.H., Ketzel, M., Hansen, K.M., Andersen, C., Brandt, J., Ellermann, T."
+  title: "Prognose- og varslingssystem for luftkvalitet i Københavns Kommune (in Danish with English summary)"
+  venue: "Aarhus Universitet, DCE – Nationalt Center for Miljø og Energi. Videnskabelig rapport nr. 636"
+  links:
+    - {label: "Full text", url: "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Videnskabelige_rapporter_600-699/SR636.pdf"}
+
+- type: report
+  year: 2023
+  authors: "Jensen, S.S., Ketzel, M., Khan, J."
+  title: "Kortlægning af luftkvalitet langs statsvejene i Danmark (in Danish with English summary)"
+  venue: "Aarhus Universitet, DCE – Nationalt Center for Miljø og Energi. Videnskabelig rapport nr. 537"
+  links:
+    - {label: "Full text", url: "http://dce2.au.dk/pub/SR537.pdf"}
+
+- type: report
+  year: 2021
+  authors: "Jensen, S.S., Ketzel, M., Khan, J., Valencia, V.V., ..., Ellermann, T."
+  title: "Luften på din vej (Air Quality on Your Street: national air quality mapping, in Danish with English summary)"
+  venue: "Aarhus University, DCE – Danish Centre for Environment and Energy"
+  links:
+    - {label: "Full text", url: "https://pure.au.dk/ws/portalfiles/portal/217841118/Jensen_2021_Luften_p_din_vej_2_0_SR445.pdf"}
+
+- type: report
+  year: 2021
+  authors: "Ellermann, T., Khan, J., Ketzel, M., Jensen, S.S. & Hertel, O."
+  title: "Air View data on the spatial distribution of air pollution in Copenhagen"
+  venue: "Aarhus University, DCE – Danish Centre for Environment and Energy. Scientific note No. 2021/40"
+  links:
+    - {label: "Full text", url: "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2021/N2021_40.pdf"}
+
+- type: proceedings
+  year: 2026
+  authors: "Baklanov, A., Christensen, J. H., Yu, S., Coll, I., Costes, M., Li, P., ....., Khan, J., Jensen, S. S., Sahyoun, M., & Nuterman, R"
+  title: "Integrated Systems and Analysis of Urban Mobility for Climate-Neutral and Sustainable Cities in Europe and China (IMTECC)"
+  venue: "In: Mensink, C., Im, U. (eds) Air Pollution Modeling and Its Application XXX. ITM 2024. Springer Proceedings in Complexity. Springer, Cham"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1007/978-3-032-02971-3_20"}
+
+- type: proceedings
+  year: 2024
+  authors: "Khan, J., Aumond, P., & Can, A."
+  title: "Data assimilation for noise mapping using CNOSSOS – A Danish case study"
+  venue: "InterNoise 2024, Nantes, France (August 2024)"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3397/IN_2024_3889"}
+
+- type: proceedings
+  year: 2024
+  authors: "Kærsaa, L., Gisladottir, A., & Khan, J."
+  title: "Case-study analysis of traffic noise at Vesterbrogade, Aarhus, Denmark"
+  venue: "Presented at InterNoise 2024, Nantes, France"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.3397/IN_2024_4598"}
+
+- type: proceedings
+  year: 2023
+  authors: "Khan, J. & Bertagnolio, F."
+  title: "Assessment of Road Traffic Noise in a Danish City Using Mobile Monitoring and Statistical Modelling Approaches"
+  venue: "Forum Acusticum 2023, 10th Convention of the European Acoustics Association, Torino, Italy"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.61782/fa.2023.0705"}
+
+- type: proceedings
+  year: 2022
+  authors: "Khan, J., Ellermann, T., & Hertel, O."
+  title: "Predicting hourly street-scale NO2 and PM2.5 concentrations using machine learning at one of Danish traffic hotspots"
+  venue: "In: Mensink, C., Jorba, O. (eds) Air Pollution Modeling and Its Application XXVIII. Springer Proceedings in Complexity. Springer, Cham"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.1007/978-3-031-12786-1"}
+
+- type: proceedings
+  year: 2021
+  authors: "Khan, J., Bertagnolio, F., & Hertel, O."
+  title: "Cyclists’ Road Traffic Noise Exposure: Highlights of Bike-to-Work Noise Measurements Campaign under Corona Lockdown in a Danish City"
+  venue: "EuroNoise 2021, European Acoustics Association and Portuguese Acoustical Society, Madeira, Portugal (online)"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.5281/zenodo.23278521"}
+
+- type: proceedings
+  year: 2021
+  authors: "Khan, J. & Hertel, O."
+  title: "A Dynamic Activity-based Modelling approach to Estimate Exposure to Air Pollution: Some Results of Recent Experiments in Copenhagen, Denmark"
+  venue: "HARMO 20, 20th International Conference on Harmonisation within Atmospheric Dispersion Modelling for Regulatory Purposes, Tartu, Estonia (online)"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.5281/zenodo.23278402"}
+
+- type: proceedings
+  year: 2019
+  authors: "Khan, J., Poulsen, M.B., Ketzel, M.; Ørby, P.V., Christensen, J.H.; Dalgaard, R., Sabel, C., Hertel, O."
+  title: "Estimation of Exposure to Air Pollution in Denmark – A Step towards Activity-based Dynamic Exposure Assessment Framework"
+  venue: "HARMO 19, 19th International Conference on Harmonisation within Atmospheric Dispersion Modelling for Regulatory Purposes, Bruges, Belgium"
+  links:
+    - {label: "DOI", url: "https://doi.org/10.5281/zenodo.23278176"}
