@@ -197,6 +197,14 @@ footer a { color: var(--muted); }
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
     });
+    // Links to other sites and the PDF open in a new tab, links inside the site stay in this tab.
+    document.querySelectorAll("a[href]").forEach(function (a) {
+      var external = a.hostname && a.hostname !== location.hostname;
+      if (external || /\.pdf$/i.test(a.pathname)) {
+        a.target = "_blank";
+        a.rel = (a.rel ? a.rel + " " : "") + "noopener";
+      }
+    });
     // Email links are stored encoded so spam bots cannot read them from the page source.
     document.querySelectorAll("a[data-e]").forEach(function (a) {
       var addr = atob(a.getAttribute("data-e")).split("").reverse().join("");
