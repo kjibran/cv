@@ -70,7 +70,7 @@ ul.plain li { margin: 0.6mm 0; }
 {% endif %}
 
 {% if p.research_focus is defined and p.research_focus %}
-<h2>Research focus</h2>
+<h2>Current research focus</h2>
 <ul class="plain">{% for item in p.research_focus %}<li>{{ item | rich }}</li>{% endfor %}</ul>
 {% endif %}
 

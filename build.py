@@ -99,11 +99,15 @@ CHEM = [
 ]
 
 
+LINK = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+
+
 def rich(text: object) -> Markup:
-    """Escape plain text, then add subscripts to chemical formulas."""
-    out = html.escape(str(text or ""), quote=False)
+    """Escape plain text, turn [text](url) into links and add subscripts to chemical formulas."""
+    out = html.escape(str(text or ""), quote=True)
     for pattern, repl in CHEM:
         out = pattern.sub(repl, out)
+    out = LINK.sub(r'<a href="\2">\1</a>', out)
     return Markup(out)
 
 
@@ -383,12 +387,21 @@ def main() -> int:
         t: [(y, [p for p in items if p["year"] == y]) for y in sorted({p["year"] for p in items}, reverse=True)]
         for t, items in by_type.items()
     }
+    sections = (
+        ("positions", "Experience", "experience"),
+        ("grants", "Grants", "grants"),
+        ("talks", "Talks", "talks"),
+        ("teaching", "Teaching", "teaching"),
+        ("service", "Service", "service"),
+    )
+    nav = [{"label": label, "anchor": anchor} for key, label, anchor in sections if profile.get(key)]
     sel = profile.get("selected_publications") or {}
     ctx = {
         "site": profile["site"],
         "person": profile["person"],
         "p": profile,
         "links": profile["links"],
+        "nav": nav,
         "email_code": encode_email(profile["person"].get("email", "")),
         "photo": photo,
         "pubs": pubs,
@@ -410,8 +423,13 @@ def main() -> int:
     }
 
     for template, target, root, extra in (
-        ("index.html.j2", OUT / "index.html", "", {"jsonld": person_jsonld(profile, photo)}),
-        ("publications.html.j2", OUT / "publications" / "index.html", "../", {"jsonld": pubs_jsonld(profile, pubs)}),
+        ("index.html.j2", OUT / "index.html", "", {"jsonld": person_jsonld(profile, photo), "page": "home"}),
+        (
+            "publications.html.j2",
+            OUT / "publications" / "index.html",
+            "../",
+            {"jsonld": pubs_jsonld(profile, pubs), "page": "publications"},
+        ),
     ):
         page = env.get_template(template).render(**ctx, **extra, root=root)
         target.write_text(page, encoding="utf-8")

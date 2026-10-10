@@ -1,6 +1,6 @@
 # Everything on the CV except the publications (those are in publications.yaml).
 # Edit, push, and the website and the PDF rebuild themselves.
-# Text fields are plain text. Leave a value as "" to hide it.
+# Text fields are plain text. Links work as [text](https://...). Leave a value as "" to hide it.
 
 site:
   url: https://kjibran.github.io/cv/        # with a trailing slash
@@ -81,7 +81,7 @@ positions:
     role: Postdoctoral Fellow
     place: Department of Environmental Science, Aarhus University, Roskilde, Denmark
     points:
-      - Co-developed methods for hyperlocal mapping of nitrogen dioxide, black carbon and ultrafine particles with Google Street View cars in Amsterdam and Copenhagen. Results are public in Google's Environmental Insights Explorer (Air Quality Labs).
+      - Co-developed methods for hyperlocal mapping of nitrogen dioxide, black carbon and ultrafine particles with Google Street View cars in Amsterdam and Copenhagen. Results are public in Google's Environmental Insights Explorer ([Air Quality Labs](https://insights.sustainability.google/labs/airquality)).
       - Generated address-level exposure estimates with AirGIS for large Danish population cohorts.
       - Evaluated low- and mid-cost air quality sensors, contributing to published guidance on sensor performance and deployment.
   - period: 2016–2018
@@ -107,7 +107,7 @@ education:
   - period: "2019"
     degree: PhD in Environmental Science (Atmospheric Modelling)
     place: Department of Environmental Science, Aarhus University, Denmark
-    detail: "Thesis: Air Quality and Noise Exposure Modelling System. Supervisors: Matthias Ketzel, Steen Solvang Jensen and Konstantinos Kakosimos."
+    detail: "Thesis: Air Quality and Noise Exposure Modelling System."
   - period: "2015"
     degree: MPhil in Space Science
     place: Institute of Space and Planetary Astrophysics, University of Karachi, Pakistan

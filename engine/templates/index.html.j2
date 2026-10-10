@@ -10,24 +10,17 @@
 .top .tagline { color: var(--muted); font-size: 1.08rem; margin: 0 auto 1rem; max-width: 34rem; }
 .top .bio { max-width: 38rem; margin: 0 auto 1.25rem; }
 .top .place { color: var(--faint); font-size: 0.95rem; margin: -0.6rem 0 1.1rem; }
-.icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 0.9rem; margin: 0 0 1.4rem; }
+.icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.35rem 0.9rem; margin: 0 0 0.5rem; }
 .icons a { color: var(--muted); display: inline-flex; padding: 0.2rem; }
 .icons a:hover { color: var(--accent); }
 .icons .icon { width: 1.45rem; height: 1.45rem; }
 @media (max-width: 30rem) { .icons { max-width: 16rem; margin-left: auto; margin-right: auto; gap: 0.5rem 0.75rem; } }
-.buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0 0 1rem; }
-.buttons a {
-  border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.95rem;
-  color: var(--text); font-size: 0.95rem; background: transparent;
-}
-.buttons a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-.buttons a.primary { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
 .metrics { font-size: 0.92rem; color: var(--muted); margin: 0 0 1.2rem; }
 .more { margin-top: 1.25rem; }
 .talk-authors { color: var(--muted); font-size: 0.95rem; }
 {% endblock %}
 {% block content %}
-<header class="top">
+<section class="top" id="top">
   {% if photo %}
   <img src="{{ photo.small }}" srcset="{{ photo.small }} 1x, {{ photo.large }} 2x" width="152" height="152" alt="Portrait of {{ person.name }}" fetchpriority="high">
   {% endif %}
@@ -38,18 +31,10 @@
   <nav class="icons" aria-label="Profiles and contact">
     {% for link in links %}{{ m.icon_link(link, root) }}{% endfor %}
   </nav>
-  <nav class="buttons" aria-label="Sections">
-    <a class="primary" href="publications/">Publications</a>
-    {% if p.positions is defined and p.positions %}<a href="#experience">Experience</a>{% endif %}
-    {% if p.grants is defined and p.grants %}<a href="#grants">Grants</a>{% endif %}
-    {% if p.talks is defined and p.talks %}<a href="#talks">Talks</a>{% endif %}
-    {% if p.teaching is defined and p.teaching %}<a href="#teaching">Teaching</a>{% endif %}
-    {% if p.service is defined and p.service %}<a href="#service">Service</a>{% endif %}
-  </nav>
-</header>
+</section>
 
 {% if p.research_focus is defined and p.research_focus %}
-<h2 id="research">Research focus</h2>
+<h2 id="research">Current research focus</h2>
 <ul class="plain">{% for item in p.research_focus %}<li>{{ item | rich }}</li>{% endfor %}</ul>
 {% endif %}
 

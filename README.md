@@ -65,7 +65,8 @@ Everything except the publications. A few fields need explaining.
 Icons available for `links`: `cv`, `mail`, `orcid`, `scholar`, `wos`, `scopus`, `researchgate`,
 `zenodo`, `linkedin`, `github`, `portfolio`. To add another, see `engine/icons/LICENSES.md`.
 
-Text is plain text. Chemical formulas such as NO2, PM2.5 and CO2 get subscripts automatically.
+Text is plain text. To add a link inside a sentence, write `[text](https://...)`. Chemical formulas
+such as NO2, PM2.5 and CO2 get subscripts automatically.
 
 ### data/publications.yaml
 
