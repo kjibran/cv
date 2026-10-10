@@ -29,7 +29,10 @@ jobs:
             --max-retries 3
             --timeout 30
             --accept "200..=299,401,403,429,999"
+            --max-concurrency 8
             --exclude "goatcounter.com"
             --exclude "gc.zgo.at"
+            --exclude "scopus\.com"
+            --exclude "zenodo"
             --root-dir "${{ github.workspace }}/site"
             site/index.html site/publications/index.html

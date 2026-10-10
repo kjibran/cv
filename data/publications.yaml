@@ -473,7 +473,8 @@
   title: "Implementation of Open-Source GIS Tools to Identify Bright Rooftops for Solar Photovoltaic Applications: A Case Study of Creek Lanes, DHA, Karachi"
   venue: "Journal of Basic and Applied Sciences, 12, 14–22"
   links:
-    - {label: "DOI", url: "https://doi.org/10.6000/1927-5129.2016.12.03"}
+    - {label: "Full text", url: "https://zenodo.org/records/23271237"}
+    - {label: "Publisher page", url: "https://lifescienceglobal.com/84-abstract/jbas/2071-abstract-implementation-of-open-source-gis-tools-to-identify-bright-rooftops-for-solar-photovoltaic-applications-a-case-study-of-creek-lanes-dha-karachi"}
     - {label: "Full text", url: "https://zenodo.org/records/23271237"}
 
 - type: journal
